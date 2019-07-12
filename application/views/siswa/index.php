@@ -1,7 +1,7 @@
 
 <div class="content">
   <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="col-lg-12 col-md-12 col-sm-6">
       <div class="card">
         <div class="card-header">
           <h3>Data Siswa</h3>
@@ -10,8 +10,8 @@
             Tambah Data
           </a>
         </div>
-        <div class="card-body">
-            <table class="table align-center">
+        <div class="card-body table-responsive">
+            <table class=" table">
               <thead class="content-center">
                 <tr>
                   <th>No</th>
