@@ -1,3 +1,4 @@
+
 <div class="content">
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12">
@@ -22,12 +23,14 @@
                 </tr>
               </thead>
               <tbody>
+              <?php $no = 1   ?>
+              <?php  foreach ($siswa as $row ) : ?>
                 <tr>
-                  <td>1</td>
-                  <td>13020170137</td>
-                  <td>Hanan</td>
-                  <td>Tomoni</td>
-                  <td>12</td>
+                  <td><?=$no++ ?></td>
+                  <td><?= $row['nis'] ?></td>
+                  <td><?= $row['nama'] ?></td>
+                  <td><?= $row['alamat'] ?></td>
+                  <td><?= $row['kelas'] ?></td>
                   <td>
                     <a href="" class="btn btn-sm btn-warning">
                       <i class="fa fa-edit"></i>
@@ -35,11 +38,12 @@
                     <a href="" class="btn btn-sm btn-info ">
                       <i class="fa fa-eye"></i>
                     </a>
-                    <button type="submit" class="btn btn-sm btn-danger clearfix">
-                        <i class="fa fa-trash-o"></i>
-                    </button>
+                    <a href="<?=base_url('siswa/hapus_siswa')?>?id=<?=$row['siswa_id']?>" class="btn btn-sm btn-danger">
+                      <i class="fa fw fa-trash-o"></i>
+                    </a>
                   </td>
                 </tr>
+                <?php  endforeach ;  ?> 
               </tbody>
             </table>
         </div>

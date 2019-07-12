@@ -6,22 +6,26 @@
                     <h3>Tambah Data Siswa</h3>
                 </div>
                 <div class="card-body">
-                    <form action="" method="POST">
+                    <form action="<?= base_url('siswa/prosesTambah')?>" method="POST">
                         <div class="form-group">
                             <label for="nama">Nama</label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" class="form-control" name = "nama" required>
                         </div>
                         <div class="form-group">
                             <label for="nama">Nis</label>
-                            <input type="number" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="nama">Nama</label>
-                            <input type="text" class="form-control" required>
+                            <input type="number" class="form-control" name = "nis" required>
                         </div>
                         <div class="form-group">
                             <label for="nama">Alamat</label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" class="form-control" name = "alamat" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nama">JK</label>
+                            <select name="jk" id="jk" class="form-control   ">
+                                <option value="">==Jenis Kelamain ==</option>
+                                <option value="L">Perempuan</option>
+                                <option value="P">Laki-Laki</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="nama">Kelas</label>

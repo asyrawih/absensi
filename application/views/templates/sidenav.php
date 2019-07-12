@@ -26,43 +26,43 @@
             </a>
           </li>
           <li>
-            <a href="<?=base_url('dashboard/siswa')?>">
+            <a href="<?=base_url('siswa')?>">
               <i class="nc-icon nc-user nc-single-02"></i>
               <p>Siswa</p>
             </a>
           </li>
           <li>
-            <a href="<?=base_url('dashboard/guru')?>">
+            <a href="<?=base_url('guru')?>">
               <i class="nc-icon nc-album-2"></i>
               <p>Guru</p>
             </a>
           </li>
           <li>
-            <a href="<?=base_url('dashboard/jadwal')?>">
+            <a href="<?=base_url('jadwal')?>">
               <i class="nc-icon nc-bell-55"></i>
               <p>Jadwal</p>
             </a>
           </li>
           <li>
-            <a href="<?=base_url('dashboard/kelas')?>">
+            <a href="<?=base_url('kelas')?>">
               <i class="nc-icon nc-tile-56"></i>
               <p>Kelas</p>
             </a>
           </li>
           <li>
-            <a href="<?=base_url('dashboard/wali')?>">
+            <a href="<?=base_url('wali')?>">
               <i class="nc-icon nc-badge"></i>
               <p>Orang Tua / Wali</p>
             </a>
           </li>
           <li>
-            <a href="<?=base_url('dashboard/laporan')?>">
+            <a href="<?=base_url('laporan')?>">
               <i class="nc-icon report nc-book-bookmark"></i>
               <p>laporan Absensi</p>
             </a>
           </li>
           <li>
-            <a href="<?=base_url('dashboard/settings')?>">
+            <a href="<?=base_url('settings')?>">
               <i class="nc-icon report nc-settings-gear-65"></i>
               <p>Settings</p>
             </a>
