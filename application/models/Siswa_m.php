@@ -29,10 +29,18 @@ class Siswa_m extends CI_Model {
         // get url id '?id=$id <= yang tertuju '
          public function hapus_siswa($id) { 
          $q = $this->db->delete('t_siswa' , ['siswa_id' => $id]);
-         if($q === true ) { 
-             
-             redirect('siswa','refresh');
+            if($q === true ) { 
+                
+                redirect('siswa','refresh');
+            }
+
          }
+
+         public function hitung_siswa() { 
+            
+            $data = $this->db->count_all('t_siswa');
+
+            return  $data ; 
 
          }
 

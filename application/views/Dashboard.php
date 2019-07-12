@@ -13,7 +13,7 @@
                   <div class="col-7 col-md-8">
                     <div class="numbers">
                       <p class="card-category">Siswa</p>
-                      <p class="card-title">250
+                      <p class="card-title"><?=$siswa?>
                         </p><p>
                     </p></div>
                   </div>
