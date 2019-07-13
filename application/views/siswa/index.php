@@ -7,7 +7,7 @@
             <i class="fa fa-user"></i>
             Data Siswa
           </h4>
-          <a href="<?= base_url('siswa/tambahSiswa') ?>" class="btn btn-succes float-right">
+          <a href="<?= base_url('siswa/tambahSiswa') ?>" class="btn btn-succes float-right mr-4">
             <i class="fa fa-pencil mx-2 text-warning"> </i>
             Tambah Data
           </a>
