@@ -35,7 +35,7 @@
                   <td><?= $row['alamat'] ?></td>
                   <td><?= $row['kelas'] ?></td>
                   <td>
-                    <a href="<?= base_url() ?>" class="btn btn-sm btn-warning">
+                    <a href="<?= base_url('siswa/edit/'.$row['siswa_id']) ?>" class="btn btn-sm btn-warning">
                       <i class="fa fa-edit"></i>
                     </a>
                     <a href="<?= base_url('siswa/show?id=').$row['siswa_id'] ?>" class="btn btn-sm btn-info">

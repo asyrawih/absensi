@@ -24,14 +24,43 @@ class Siswa_m extends CI_Model {
         // Tambah Data Siswa
         // var $siswa di terima dari contriller siswa 
         // Menerima Data Dari form inputan 
-        public function insert_siswa($siswa) { 
+        public function insert_siswa($siswa) {
 
             $q = $this->db->insert('t_siswa', $siswa);
             if($q === true ) {  
                 redirect('siswa','refresh');
-            }
-            
+            }          
         }
+
+        // Update Data Siswa 
+        // Var $siswa Di ambil Dri Controller update 
+        // dengan method update_siswa
+
+        public function update_siswa($siswa){
+
+            // Cegat Akses Url Dengan parameter nulll 
+
+            $url = $this->uri->segment(3);
+
+            if($url !== null ){
+                $q = $this->db->update('t_siswa', $siswa);
+                if($q === true) { 
+                    redirect('siswa','refresh');
+                }else { 
+                    echo "gagal" ;
+                }
+
+            } else {
+                show_404();
+            }
+
+           
+            
+
+        }
+
+
+
         //Hapus Data Siswa 
         // var $id di dapat dari Controller Siswa 
         // dengan menerima Parameter id mengunakan 

@@ -76,6 +76,34 @@ class Siswa extends CI_controller {
            show_404();
        }
    }
+   // Tampilkan Menu Edit 
+   public function Edit($id){ 
+
+        $data['title'] = 'Edit Data Siswa';
+        $data['siswa'] = $this->siswa->get_siswa_byId($id)->result_array();
+        $this->load->view('templates/header',$data);
+        $this->load->view('templates/sidenav');
+        $this->load->view('templates/navbar', $data);
+        $this->load->view('siswa/edit');
+        $this->load->view('templates/footer');
+
+   }
+   //Proses update Siswa
+   public function update(){
+
+        $siswa = [
+            'nama'      => $this->input->post('nama' , true),
+            'alamat'    => $this->input->post('alamat' , true),
+            'nis'       => $this->input->post('nis' , true),
+            'kelas'     => $this->input->post('kelas' , true ), 
+            'jk'        => $this->input->post('jk' , true),
+            'no_hp'     => $this->input->post('no_hp' , true)
+            
+        ];   
+        
+        $data = $this->siswa->update_siswa($siswa);
+
+   }
 
 
 }
