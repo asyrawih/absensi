@@ -23,8 +23,8 @@
                             <label for="nama">JK</label>
                             <select name="jk" id="jk" class="form-control   ">
                                 <option value="">==Jenis Kelamain ==</option>
-                                <option value="L">Perempuan</option>
-                                <option value="P">Laki-Laki</option>
+                                <option value="P">Perempuan</option>
+                                <option value="L">Laki-Laki</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -62,11 +62,15 @@
                                 <option value="IX-9">IX-9</option>
                             </select>
                         </div>
+                        <div class="form-group">
+                            <label for="no_hp">No Hp Wali / Orang Tua </label>
+                            <input type="number" name="no_hp" class="form-control" required>
+                        </div>
                         <button class="btn btn-success" type="submit" name="submit">
                             <i class="fa fa-plane"></i>
                             Kirim
                         </button>
-                        <a href="" class="btn btn-primary">
+                        <a href="<?= base_url('siswa') ?>" class="btn btn-primary">
                             <i class="fa fa-backward"></i>
                             Kembali
                         </a>

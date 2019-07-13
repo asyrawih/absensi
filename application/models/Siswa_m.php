@@ -12,6 +12,15 @@ class Siswa_m extends CI_Model {
             $data  = $this->db->get('t_siswa');
             return $data;
         }
+        // Ambil Data Siswa berdasarkan id 
+        // Terima $id dari controller Siswa
+        public function get_siswa_byId($id){
+            
+            $data = $this->db->get_where('t_siswa' , ['siswa_id' => $id]);
+            
+            return $data ;
+            
+        }
         // Tambah Data Siswa
         // var $siswa di terima dari contriller siswa 
         // Menerima Data Dari form inputan 
@@ -35,11 +44,10 @@ class Siswa_m extends CI_Model {
             }
 
          }
-
+         // Hitung Jumalah Siswa keselurahan Dalam Tabel 
          public function hitung_siswa() { 
             
             $data = $this->db->count_all('t_siswa');
-
             return  $data ; 
 
          }

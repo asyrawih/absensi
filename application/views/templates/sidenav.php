@@ -27,6 +27,12 @@
           </li>
           <li>
             <a href="<?=base_url('siswa')?>">
+              <i class="nc-icon nc-alert-circle-i"></i>
+              <p>Absen</p>
+            </a>
+          </li>
+          <li>
+            <a href="<?=base_url('siswa')?>">
               <i class="nc-icon nc-user nc-single-02"></i>
               <p>Siswa</p>
             </a>
@@ -36,23 +42,11 @@
               <i class="nc-icon nc-album-2"></i>
               <p>Guru</p>
             </a>
-          </li>
-          <li>
-            <a href="<?=base_url('jadwal')?>">
-              <i class="nc-icon nc-bell-55"></i>
-              <p>Jadwal</p>
-            </a>
-          </li>
+          </li> 
           <li>
             <a href="<?=base_url('kelas')?>">
               <i class="nc-icon nc-tile-56"></i>
               <p>Kelas</p>
-            </a>
-          </li>
-          <li>
-            <a href="<?=base_url('wali')?>">
-              <i class="nc-icon nc-badge"></i>
-              <p>Orang Tua / Wali</p>
             </a>
           </li>
           <li>
