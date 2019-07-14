@@ -6,14 +6,14 @@
                     <h3>Tambah Data Siswa</h3>
                 </div>
                 <div class="card-body">
-                    <form action="<?= base_url('siswa/prosesTambah')?>" method="POST">
+                    <form action="<?= base_url('guru/proses_tambah')?>" method="POST">
                         <div class="form-group">
                             <label for="nama">Nama</label>
-                            <input type="text" class="form-control" name = "nama" required>
+                            <input type="text" class="form-control" name = "nama_guru" required>
                         </div>
                         <div class="form-group">
                             <label for="nama">Kode_guru</label>
-                            <input type="number" class="form-control" name = "nis" required>
+                            <input type="text" class="form-control" name = "kode" required>
                         </div>
                         <div class="form-group">
                             <label for="nama">Alamat</label>
@@ -21,7 +21,7 @@
                         </div>
                         <div class="form-group">
                             <label for="no_hp">No Hp </label>
-                            <input type="number" name="no_hp" class="form-control" required>
+                            <input type="number" name="nohp" class="form-control" required>
                         </div>
                         <button class="btn btn-success" type="submit" name="submit">
                             <i class="fa fa-plane"></i>

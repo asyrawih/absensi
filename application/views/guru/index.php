@@ -35,13 +35,13 @@
                           <td><?= $row['kd_guru'] ?></td>
                           <td><?= $row['alamat'] ?></td>
                           <td>
-                            <a href="" class="btn btn-warning btn-sm">
+                            <a href="<?= base_url('guru/edit/'.$row['guru_id']) ?>" class="btn btn-warning btn-sm">
                               <i class="fa fa-edit"></i>
                             </a>
-                            <a href="" class="btn btn-info btn-sm">
+                            <a href="<?= base_url('guru/show?id='.$row['guru_id'])?>" class="btn btn-info btn-sm">
                               <i class="fa fa-eye"></i>
                             </a>
-                            <a href="" class="btn btn-danger btn-sm">
+                            <a href="<?= base_url('guru/delete_guru?id='.$row['guru_id']) ?>" class="btn btn-danger btn-sm">
                               <i class="fa fa-trash "></i>
                             </a>
                           </td>

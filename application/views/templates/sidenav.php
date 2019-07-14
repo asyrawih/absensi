@@ -26,7 +26,7 @@
             </a>
           </li>
           <li>
-            <a href="<?=base_url('siswa')?>">
+            <a href="<?=base_url('absensi')?>">
               <i class="nc-icon nc-alert-circle-i"></i>
               <p>Absen</p>
             </a>

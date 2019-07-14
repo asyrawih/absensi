@@ -13,13 +13,17 @@ class Dashboard extends CI_controller {
      {
           parent::__construct();
           $this->load->model('Siswa_m' , 'siswa');
+          $this->load->model('Guru_m', 'guru');
+          
           
      }
    public function index(){
     
         $data['title'] = 'Aplikasi Absensi';
-        // hitung siswa 
+          // hitung siswa 
           $data['siswa'] =  $this->siswa->hitung_siswa();
+          // hitung Guru 
+          $data['guru']  =  $this->guru->hitung_guru();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidenav',$data);
         $this->load->view('templates/navbar' , $data);

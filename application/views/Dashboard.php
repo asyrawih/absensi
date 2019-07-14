@@ -66,7 +66,7 @@
                   <div class="col-7 col-md-8">
                     <div class="numbers">
                       <p class="card-category">Guru</p>
-                      <p class="card-title">23
+                      <p class="card-title"><?= $guru ?>
                         </p><p>
                     </p></div>
                   </div>

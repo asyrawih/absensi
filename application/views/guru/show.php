@@ -13,7 +13,7 @@
 							src="../assets/img/mike.jpg"
 						/>
 					</a>
-					<h5 class="title"></h5>
+					<h5 class="title"><?= $guru[0]['nama_guru'] ?></h5>
 					
 				</div>
 			</div>
@@ -25,24 +25,23 @@
 							<h5>
 								Kode_guru
 								<br />
-								<small><?= $siswa[0]['kelas'] ?></small>
+								<small><?= $guru[0]['kd_guru'] ?></small>
 							</h5>
 						</div>
 						<div class="col-lg-4 col-md-6 col-6 ml-auto mr-auto">
 							<h5>
 								Alamat
 								<br />
-								<small><?= $siswa[0]['alamat'] ?></small>
+								<small><?= $guru[0]['alamat'] ?></small>
 							</h5>
 						</div>
 						<div class="col-lg-3 mr-auto">
 							<h5>
 								Nomor Hp
 								<br />
-								<small></small>
+								<small><?= $guru[0]['no_hp'] ?></small>
 							</h5>
-						</div>
-						
+						</div>		
 					</div>
 				</div>
 			</div>
