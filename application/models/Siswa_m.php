@@ -39,7 +39,7 @@ class Siswa_m extends CI_Model
     // Var $siswa Di ambil Dri Controller update 
     // dengan method update_siswa
 
-    public function update_siswa($siswa)
+    public function update_siswa($id,$siswa)
     {
 
         // Cegat Akses Url Dengan parameter nulll 
@@ -47,11 +47,11 @@ class Siswa_m extends CI_Model
         $url = $this->uri->segment(3);
 
         if ($url !== null) {
-            $q = $this->db->update('t_siswa', $siswa);
+            $q = $this->db->update('t_siswa', $siswa , ['siswa_id' => $id ]);
             if ($q === true) {
                 redirect('siswa', 'refresh');
             } else {
-                echo "gagal";
+            echo "gagal";
             }
         } else {
             show_404();

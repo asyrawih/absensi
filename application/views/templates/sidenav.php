@@ -44,12 +44,6 @@
             </a>
           </li> 
           <li>
-            <a href="<?=base_url('kelas')?>">
-              <i class="nc-icon nc-tile-56"></i>
-              <p>Kelas</p>
-            </a>
-          </li>
-          <li>
             <a href="<?=base_url('laporan')?>">
               <i class="nc-icon report nc-book-bookmark"></i>
               <p>laporan Absensi</p>

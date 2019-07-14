@@ -17,10 +17,11 @@ class Guru_m extends CI_Model
         return $data;
     }
 
-    function hitung_guru() { 
-   
+    function hitung_guru()
+    {
+
         $hitung =  $data = $this->db->count_all('t_guru');
-        return $hitung ; 
+        return $hitung;
     }
 
     //=========================== Proses ==========================// 
@@ -48,19 +49,25 @@ class Guru_m extends CI_Model
         }
     }
 
-    public function update_guru($guru)
+    public function update_guru($id,$guru)
     {
-        if ($guru !== null) {
 
-            $this->db->update('t_guru', $guru);
-            redirect('guru','refresh');
-            
+        // Cegat Akses Url Dengan parameter nulll 
+
+        $url = $this->uri->segment(3);
+
+        if ($url !== null) {
+            $q = $this->db->update('t_guru', $guru , ['guru_id' => $id ]);
+            if ($q === true) {
+                redirect('guru', 'refresh');
+            } else {
+            echo "gagal";
+            }
         } else {
-
             show_404();
-
         }
     }
+
 }
 
 /* End of file Guru_m.php */

@@ -1,75 +1,29 @@
+
 <div class="content">
     <div class="row">
-        <div class="col-lg-12 col md-12">
-            <div class="card">
-                <div class="card-header">
+        <?php  foreach($kelas as $row ) :   ?> 
+        <div class="col-lg-2 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-body ">
                     <div class="row">
-                        <div class="col-lg-4">
-                            <div class="card-title">
-                                <b>ABSEN SISWA</b>
-                            </div>
-                            <div class="card-title">
-                                <b>Tahun Ajaran : <small></small></b>
-                            </div>
-                            <div class="card-title">
-                                <b>Kelas : <small></small></b>
+                        <div class="col-5 col-md-4">
+                            <div class="icon-big text-center icon-warning">
+                                <i class="nc-icon nc-air-baloon text-danger"></i>
                             </div>
                         </div>
-                        <div class="col-lg-5">
-                            <div class="card-title">
-                                <b>Tanggal Absensi :</b>
+                        <div class="col-7 col-md-8">
+                            <div class="numbers">
+                                <p class="card-category">Kelas</p>
+                                <p class="card-title">
+                                    <?= $row['tingkat'] ?>
+                                </p>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>NIS</th>
-                                    <th>Nama</th>
-                                    <th class="text-center">H | I | S | A </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>13020170137</td>
-                                    <td>Hanan asyrawi</td>
-                                    <td class="text-center">
-                                        <div class="form-check form-check-inline">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> 
-                                                <span class="form-check-sign"></span>
-                                            </label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> 
-                                                <span class="form-check-sign"></span>
-                                            </label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> 
-                                                <span class="form-check-sign"></span>
-                                            </label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"> 
-                                                <span class="form-check-sign"></span>
-                                            </label>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <a href="<?=base_url('absensi/absen_kelas?kelas='.$row['tingkat'])?>" class="btn btn-sm btn-info">open</a>
                 </div>
             </div>
         </div>
+        <?php endforeach ;  ?>
     </div>
 </div>

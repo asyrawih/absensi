@@ -90,7 +90,7 @@ class Siswa extends CI_controller
     //Proses update Siswa
     public function update()
     {
-
+        $id = $this->uri->segment(3) ; 
         $siswa = [
             'nama'      => $this->input->post('nama', true),
             'alamat'    => $this->input->post('alamat', true),
@@ -100,6 +100,6 @@ class Siswa extends CI_controller
             'no_hp'     => $this->input->post('no_hp', true)
 
         ];
-        $data = $this->siswa->update_siswa($siswa);
+        $data = $this->siswa->update_siswa($id,$siswa);
     }
 }

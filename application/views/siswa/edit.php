@@ -8,6 +8,7 @@
                 </div>
                 <div class="card-body">
                     <form action="<?= base_url('siswa/update/'.$siswa[0]['siswa_id'])?>" method="POST">
+                        <input type="hidden" value="<?= $siswa[0]['siswa_id'] ?>" name="id" >
                         <div class="form-group">
                             <label for="nama">Nama</label>
                             <input type="text" class="form-control" name = "nama" value="<?= $siswa[0]['nama'] ?>" required>

@@ -6,7 +6,8 @@
                     <h3>Edit Data Guru</h3>
                 </div>
                 <div class="card-body">
-                    <form action="<?= base_url('guru/update') ?>" method="POST">
+                    <form action="<?= base_url('guru/update/'.$guru[0]['guru_id']) ?>" method="POST">
+                        <input type="hidden" value="<?= $guru[0]['guru_id'] ?>" name="id">
                         <div class="form-group">
                             <label for="nama">Nama</label>
                             <input type="text" class="form-control" name="nama_guru" value="<?= $guru[0]['nama_guru']?>"   required>
