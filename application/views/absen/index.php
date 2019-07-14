@@ -6,7 +6,7 @@
             <div class="card card-stats">
                 <div class="card-body ">
                     <div class="row">
-                        <div class="col-5 col-md-4">
+                        <div class="col-lg-5 col-md-4">
                             <div class="icon-big text-center icon-warning">
                                 <i class="nc-icon nc-air-baloon text-danger"></i>
                             </div>
