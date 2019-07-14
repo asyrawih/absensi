@@ -15,6 +15,11 @@
                                 <b>Kelas : <small></small></b>
                             </div>
                         </div>
+                        <div class="col-lg-5">
+                            <div class="card-title">
+                                <b>Tanggal Absensi :</b>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="card-body">

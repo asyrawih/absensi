@@ -83,27 +83,15 @@ class Guru extends CI_Controller
 
     public function update()
     {
-
-
-        //cegat Akses link update
-        $url = $this->uri->segment(3);
-
-        if($url !== null ){
-                // Sedikan Data Dalam Bentuk Array Assoc 
-                $data = [
-                    'nama_guru' => $this->input->post('nama_guru', true),
-                    'kd_guru'   => $this->input->post('kode', true),
-                    'no_hp'     => $this->input->post('nohp', true),
-                    'alamat'    => $this->input->post('alamat', true)
-                ];
-                $this->guru->update_guru($data);
-            }else { 
-                // Bila Controller update akses langsung Tampilkan halaman Error Ini 
-                show_error("Access di Tolak Tolong Hubungi Admin Hanan Asyrawi Rivai  " , 500 , "Error Ki Bosss Ku");
-            }
-        }
-       
-       
+        // Sedikan Data Dalam Bentuk Array Assoc 
+        $data = [
+            'nama_guru' => $this->input->post('nama_guru', true),
+            'kd_guru'   => $this->input->post('kode', true),
+            'no_hp'     => $this->input->post('nohp', true),
+            'alamat'    => $this->input->post('alamat', true)
+        ];
+        $this->guru->update_guru($data);
+        }       
 }
 
 /* End of file Guru.php */
