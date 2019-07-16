@@ -12,19 +12,19 @@
                                 <b>Tahun Ajaran : <small></small></b>
                             </div>
                             <div class="card-title">
-                                <b>Kelas : <small></small></b>
+                                <b>Kelas : VII-1 </b>
                             </div>
                         </div>
                         <div class="col-lg-5">
                             <div class="card-title">
-                                <b>Tanggal Absensi :</b>
+                                <b>Tanggal Absensi : <?= date('Y-m-d') ?></b>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <form action="<?= base_url('absensi/proses_absen') ?>" method="POST">
+                        <form action="<?= base_url('absensi/proses_ab') ?>" method="POST">
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
@@ -35,42 +35,46 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php foreach($kelas as $row ) :  ?>
                                     <tr>
                                         <td>1</td>
                                         <td>
-                                          13020170137
+                                          <!-- Ambil Data nis Dari model siswa  -->
+                                          <?= $row['nis'] ?>
                                         </td>
                                         <td>
-                                            <input type="hidden" value="1" name="siswa_id" value="1">
-                                            hanan asyrawi rivai
+                                            <!-- ambil Id siswa_id Dari model siswa passing di value nya  -->
+                                            <input type="hidden"  name="siswa_id[]" value="<?=$row['siswa_id']?>">
+                                            <?= $row['nama'] ?>
                                         </td>
                                         <td class="text-center">
                                             <div class="form-check form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="0" name="hadir">
+                                                    <input class="form-check-input" type="checkbox"  name="hadir[]" <?= 'checked' ? 'value = "1"' : 'value = "0"'  ?>  >
                                                     <span class="form-check-sign"></span>
                                                 </label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="0" name="izin">
+                                                    <input class="form-check-input" type="checkbox"   name="izin[]" <?= 'checked' ? 'value = "1"' : 'value = "0"'  ?> >
                                                     <span class="form-check-sign"></span>
                                                 </label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input class="form-check-input" type="checkbox" value="0" name="sakit">
+                                                    <input class="form-check-input" type="checkbox"  name="sakit[]" <?= 'checked' ? 'value = "1"' : 'value = "0"'  ?> >
                                                     <span class="form-check-sign"></span>
                                                 </label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <label class="form-check-label">
-                                                    <input class="form-check-input" type="checkbox" value="0" name="alpha">
+                                                    <input class="form-check-input" type="checkbox"  name="alpha[]" <?= 'checked' ? 'value = "1"' : 'value = "0"'  ?> >
                                                     <span class="form-check-sign"></span>
                                                 </label>
                                             </div>
                                         </td>
                                     </tr>
+                                    <?php  endforeach ;  ?>
                                 </tbody>
                                 <button type="submit" class="btn btn-primary">Kirim</button>
                             </table>

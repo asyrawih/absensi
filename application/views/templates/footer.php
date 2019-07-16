@@ -32,6 +32,8 @@
   <!-- Control Cnter for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="<?=base_url()?>assets/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
   <script>
+    // Agar Bisa Di scrolll jancokkkk 
+    
     $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
     $('.main-panel').perfectScrollbar('update');
   </script>

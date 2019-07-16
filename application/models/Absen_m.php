@@ -25,6 +25,16 @@ class Absen_m extends CI_Model
         $kelas = $this->db->get('t_kelas')->result_array();
         return $kelas ;
     }
+
+
+    function get_absen(){ 
+
+        $ab = $this->db->get('t_absensi')->result_array();
+        
+        return $ab ; 
+
+
+    }
 }
 
 /* End of file Absen_m.php */
