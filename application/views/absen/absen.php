@@ -28,7 +28,7 @@
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>No</th>
+                                     
                                         <th>NIS</th>
                                         <th>Nama</th>
                                         <th class="text-center">KET</th>
@@ -39,7 +39,7 @@
                                     $no = 1 ;
                                     foreach ($kelas as $row) :  ?>
                                         <tr>
-                                            <td><?=$no++?></td>
+                                           
                                             <td>
                                                 <!-- Ambil Data nis Dari model siswa  -->
                                                 <?= $row['nis'] ?>
@@ -50,12 +50,12 @@
                                                 <?= $row['nama'] ?>
                                             </td>
                                             <td class="text-center">
-                                                <div class="form-check form-check-inline">
-                                                    <label class="form-check-label">
-                                                        <input class="form-check-input" type="checkbox" name="hadir[]" value="1">
-                                                        <span class="form-check-sign"></span>
-                                                    </label>
-                                                </div>
+                                                <select name="ket[]" id="ket" class="custom-select-sm">
+                                                    <option value="">Ket</option>
+                                                    <option value="hadir">Hadir</option>
+                                                    <option value="sakit">sakit</option>
+                                                    <option value="izin">izin</option>
+                                                </select>
                                             </td>
                                         </tr>
                                     <?php endforeach;  ?>

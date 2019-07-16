@@ -29,9 +29,13 @@ class Absen_m extends CI_Model
     //Save Data 
     // params nya Data dari controller 
     function save_ab($data) {
-        var_dump($data);
-        // $save = $this->db->insert_batch('t_absensi', $data);
-        // return $save ; 
+        try {
+            $save = $this->db->insert_batch('t_absensi', $data); 
+            redirect('absensi','refresh');
+        } catch (\Throwable $th) {
+           echo $th ; 
+        }
+     
         
     }
 }

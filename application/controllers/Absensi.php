@@ -49,19 +49,18 @@ class Absensi extends CI_Controller
 
         $data     = []; // Sediakan Array Kosong untuk data yang akan di push 
         $siswa = $this->input->post('siswa_id');
-        $hadir = $this->input->post('hadir');
+        $ket = $this->input->post('ket');
         $tanggal = date('Y-m-d');
         // tangkap nilai siswa_id untuk di looping nanti nya 
-
-        for ($index=0; $index <count($siswa) ; $index++) { 
+        $index = 0 ;
+        foreach ($siswa as $siswa_id) {
             array_push($data, array(
                 'siswa_id'  => $siswa[$index],
-                'hadir'     => $hadir[$index],
+                'ket'     => $ket[$index],
                 'tanggal'   => $tanggal
             ));
+            $index++;
         }
-
-
         $this->absen->save_ab($data);   
     }
 }
