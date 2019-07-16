@@ -26,14 +26,13 @@ class Absen_m extends CI_Model
         return $kelas ;
     }
 
-
-    function get_absen(){ 
-
-        $ab = $this->db->get('t_absensi')->result_array();
+    //Save Data 
+    // params nya Data dari controller 
+    function save_ab($data) {
+        var_dump($data);
+        // $save = $this->db->insert_batch('t_absensi', $data);
+        // return $save ; 
         
-        return $ab ; 
-
-
     }
 }
 

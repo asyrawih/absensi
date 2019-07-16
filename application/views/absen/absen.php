@@ -31,52 +31,36 @@
                                         <th>No</th>
                                         <th>NIS</th>
                                         <th>Nama</th>
-                                        <th class="text-center">H | I | S | A </th>
+                                        <th class="text-center">KET</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach($kelas as $row ) :  ?>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>
-                                          <!-- Ambil Data nis Dari model siswa  -->
-                                          <?= $row['nis'] ?>
-                                        </td>
-                                        <td>
-                                            <!-- ambil Id siswa_id Dari model siswa passing di value nya  -->
-                                            <input type="hidden"  name="siswa_id[]" value="<?=$row['siswa_id']?>">
-                                            <?= $row['nama'] ?>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="form-check form-check-inline">
-                                                <label class="form-check-label">
-                                                    <input class="form-check-input" type="checkbox"  name="hadir[]" <?= 'checked' ? 'value = "1"' : 'value = "0"'  ?>  >
-                                                    <span class="form-check-sign"></span>
-                                                </label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <label class="form-check-label">
-                                                    <input class="form-check-input" type="checkbox"   name="izin[]" <?= 'checked' ? 'value = "1"' : 'value = "0"'  ?> >
-                                                    <span class="form-check-sign"></span>
-                                                </label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <label class="form-check-label">
-                                                    <input class="form-check-input" type="checkbox"  name="sakit[]" <?= 'checked' ? 'value = "1"' : 'value = "0"'  ?> >
-                                                    <span class="form-check-sign"></span>
-                                                </label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <label class="form-check-label">
-                                                    <input class="form-check-input" type="checkbox"  name="alpha[]" <?= 'checked' ? 'value = "1"' : 'value = "0"'  ?> >
-                                                    <span class="form-check-sign"></span>
-                                                </label>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <?php  endforeach ;  ?>
+                                    <?php
+                                    $no = 1 ;
+                                    foreach ($kelas as $row) :  ?>
+                                        <tr>
+                                            <td><?=$no++?></td>
+                                            <td>
+                                                <!-- Ambil Data nis Dari model siswa  -->
+                                                <?= $row['nis'] ?>
+                                            </td>
+                                            <td>
+                                                <!-- ambil Id siswa_id Dari model siswa passing di value nya  -->
+                                                <input type="hidden" name="siswa_id[]" value="<?= $row['siswa_id'] ?>" value="1">
+                                                <?= $row['nama'] ?>
+                                            </td>
+                                            <td class="text-center">
+                                                <div class="form-check form-check-inline">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="checkbox" name="hadir[]" value="1">
+                                                        <span class="form-check-sign"></span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach;  ?>
                                 </tbody>
-                                <button type="submit" class="btn btn-primary">Kirim</button>
+                                <button type="submit" class="btn btn-success">Kirim</button>
                             </table>
                         </form>
                     </div>

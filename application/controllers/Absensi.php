@@ -13,7 +13,7 @@ class Absensi extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Absen_m', 'absen');
-        $this->load->model('Siswa_m' , 'siswa');
+        $this->load->model('Siswa_m', 'siswa');
     }
 
     //
@@ -45,25 +45,26 @@ class Absensi extends CI_Controller
 
     // Proses Data Absen 
     public function proses_ab()
-    { 
+    {
 
-       $data     = [] ; // Sediakan Array Kosong untuk data yang akan di push 
-       $index = 0 ;  // untuk atur nomor index yang di push 
-       $siswa = $this->input->post('siswa_id'); // tangkap nilai siswa_id untuk di looping nanti nya 
-        foreach ($siswa as $siswa_id ) {
-            // push $data dari nilai yang di tangkap dari form 
-            array_push($data , [ 
-                'siswa_id'  => $siswa_id,
-                'hadir'     => $this->input->post('hadir')[$index], // Tangkap nilai Dari Form 
-                'izin'      => $this->input->post('izin')[$index],
-                'sakit'     => $this->input->post('sakit')[$index]
-            ]);
-            $index++;
+        $data     = []; // Sediakan Array Kosong untuk data yang akan di push 
+        $siswa = $this->input->post('siswa_id');
+        $hadir = $this->input->post('hadir');
+        $tanggal = date('Y-m-d');
+        // tangkap nilai siswa_id untuk di looping nanti nya 
+
+        for ($index=0; $index <count($siswa) ; $index++) { 
+            array_push($data, array(
+                'siswa_id'  => $siswa[$index],
+                'hadir'     => $hadir[$index],
+                'tanggal'   => $tanggal
+            ));
         }
-    
-        echo json_encode($data);
 
+
+        $this->absen->save_ab($data);   
     }
 }
+
 
 /* End of file Absensi.php */
