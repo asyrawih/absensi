@@ -12,7 +12,11 @@
                                 <b>Tahun Ajaran : <small></small></b>
                             </div>
                             <div class="card-title">
-                                <b>Kelas : VII-1 </b>
+                                <b>Kelas : <?php  
+                                    if(!empty($kelas)){
+                                        echo $kelas[0]['kelas'] ; 
+                                    }
+                                ?>  </b>
                             </div>
                         </div>
                         <div class="col-lg-5">
@@ -25,7 +29,7 @@
                 <div class="card-body">
                     <div class="table-responsive">
                         <form action="<?= base_url('absensi/proses_ab') ?>" method="POST">
-                            <table class="table table-bordered">
+                            <table class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                      

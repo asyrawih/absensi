@@ -39,7 +39,7 @@ class Absensi extends CI_Controller
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidenav', $data);
         $this->load->view('templates/navbar', $data);
-        $this->load->view('absen/absen');
+        $this->load->view('absen/absen',$data);
         $this->load->view('templates/footer');
     }
 
