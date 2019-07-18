@@ -13,8 +13,8 @@
           </a>
         </div>
         <div class="card-body">
-          <div class="table-responsive">
-            <table class="table">
+          <div class="table-responsive table-full-width">
+            <table class="table table-bordered">
               <thead class=" text-primary text-center">
                 <tr>
                 <th>No</th>

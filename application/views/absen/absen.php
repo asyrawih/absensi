@@ -53,8 +53,8 @@
                                                 <input type="hidden" name="siswa_id[]" value="<?= $row['siswa_id'] ?>" value="1">
                                                 <?= $row['nama'] ?>
                                             </td>
-                                            <td class="text-center">
-                                                <select name="ket[]" id="ket" class="custom-select-sm">
+                                            <td class="text-center ">
+                                                <select name="ket[]" id="ket" class="form-control" required>
                                                     <option value="">Ket</option>
                                                     <option value="hadir">Hadir</option>
                                                     <option value="sakit">sakit</option>

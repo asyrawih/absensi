@@ -24,10 +24,19 @@ class Siswa extends CI_controller
     {
         $data['title'] = 'Siswa';
         $id = $this->input->get('id');
-
+        $this->load->model('Absen_m' , 'absen');
+        $kehadiran = $this->absen->hitung_kehadiran_siswa($id , 'hadir');
+        $sakit = $this->absen->hitung_kehadiran_siswa($id , 'sakit');
+        $izin = $this->absen->hitung_kehadiran_siswa($id , 'izin');
         // cegat apa bila id nya tdk di isi ato langsung akses ke link 
         if ($id !== null) {
+            //Ambil Semua data absensi taruh dalam satu varible 
             $data['siswa'] = $this->siswa->get_siswa_byId($id)->result_array();
+            $data['kehadiran'] = $kehadiran ; 
+            $data['sakit'] = $sakit ; 
+            $data['izin'] = $izin ; 
+
+            
             $this->load->view('templates/header', $data);
             $this->load->view('templates/sidenav');
             $this->load->view('templates/navbar', $data);

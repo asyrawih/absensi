@@ -1,6 +1,6 @@
 
-      <div class="content">
-        <div class="row">
-          
-        </div>
-      </div>
+<div class="content">
+  <div class="row">
+    
+  </div>
+</div>

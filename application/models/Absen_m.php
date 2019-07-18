@@ -38,6 +38,38 @@ class Absen_m extends CI_Model
      
         
     }
+
+    // hitung kehadiran siswa 
+
+    public function hitung_kehadiran_siswa($siswa_id , $ket){
+
+        // cek parameter kehadiran /hadir/sakit/izin ; 
+        if($ket === 'hadir'){
+            //Sediak kan Sql Dan passing query nya boss ku 
+            $sql = "SELECT COUNT(ket) as kehadiran  FROM t_absensi WHERE siswa_id = '$siswa_id' AND ket = '$ket' " ; 
+            // terima data dari sql Tampung ke varible $q 
+            $q = $this->db->query($sql);
+            // kembalikan nilai nya sebaris saja boss q 
+            return $q->row_array(); 
+        }elseif ($ket === 'sakit') {
+           //Sediak kan Sql Dan passing query nya boss ku 
+           $sql = "SELECT COUNT(ket) as kehadiran  FROM t_absensi WHERE siswa_id = '$siswa_id' AND ket = '$ket' " ; 
+           // terima data dari sql Tampung ke varible $q 
+           $q = $this->db->query($sql);
+           // kembalikan nilai nya sebaris saja boss q 
+           return $q->row_array(); 
+        }else { 
+            //Sediak kan Sql Dan passing query nya boss ku 
+            $sql = "SELECT COUNT(ket) as kehadiran  FROM t_absensi WHERE siswa_id = '$siswa_id' AND ket = '$ket' " ; 
+            // terima data dari sql Tampung ke varible $q 
+            $q = $this->db->query($sql);
+            // kembalikan nilai nya sebaris saja boss q     
+            return $q->row_array(); 
+        }
+
+    }
+
+
 }
 
 /* End of file Absen_m.php */

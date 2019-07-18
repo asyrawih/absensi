@@ -14,7 +14,23 @@
 						/>
 					</a>
 					<h5 class="title"><?= $siswa[0]['nama'] ?></h5>
-					<small><?= $siswa[0]['jk'] == 'P' ? 'Perempuan' : 'Laki-Laki' ?></small>
+					<h3><?= $siswa[0]['jk'] == 'P' ? 'Perempuan' : 'Laki-Laki' ?></h3>
+				</div>
+				<div class="col-lg-12 col-md-4 col-sm-3 ml-2">
+					<table class="table table-bordered">
+						<thead class="text-center bg-success shadow text-white">
+							<th>Hadir</th>
+							<th>Sakit</th>
+							<th>Izin</th>
+						</thead>
+						<tbody class="text-center">
+							<tr>
+								<td><?= $kehadiran['kehadiran'] ?></td>
+								<td><?= $sakit['kehadiran'] ?> </td>
+								<td><?= $izin['kehadiran'] ?> </td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
 			<div class="card-footer">
@@ -28,7 +44,7 @@
 								<small><?= $siswa[0]['kelas'] ?></small>
 							</h5>
 						</div>
-						<div class="col-lg-4 col-md-6 col-6 ml-auto mr-auto">
+						<div class="col-lg-3 col-md-6 col-6 ml-auto mr-auto">
 							<h5>
 								Alamat
 								<br />
