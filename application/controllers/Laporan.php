@@ -17,12 +17,21 @@ class Laporan extends CI_Controller
   {
     $data['title'] = "Laporan";
 
-    
+
 
     $this->load->view('templates/header', $data);
     $this->load->view('templates/sidenav', $data);
     $this->load->view('templates/navbar');
     $this->load->view('laporan/index');
+    $this->load->view('templates/footer');
+  }
+
+  public function show() { 
+    $data['title'] = "show";
+    $this->load->view('templates/header', $data);
+    $this->load->view('templates/sidenav', $data);
+    $this->load->view('templates/navbar');
+    $this->load->view('laporan/show');
     $this->load->view('templates/footer');
   }
   public function export()
