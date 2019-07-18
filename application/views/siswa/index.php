@@ -11,42 +11,50 @@
             <i class="fa fa-pencil mx-2 text-warning"> </i>
             Tambah Data
           </a>
+          <form action="">
+            <select name="kelas" id="kelas" class="form-control col-md-3 mt-4">
+              <?php foreach ($kelas as $row) : ?>
+                <option value="<?= $row['tingkat'] ?>"><?= $row['tingkat'] ?></option>
+              <?php endforeach;  ?>
+            </select>
+            <button type="submit" class="btn btn-info">Cari</button>
+          </form>
         </div>
         <div class="card-body">
           <div class="table-responsive table-full-width">
             <table class="table table-bordered">
-              <thead class=" text-primary text-center">
+              <thead class=" text-white text-center bg-success ">
                 <tr>
-                <th>No</th>
-                <th>Nis</th>
-                <th>Nama</th>
-                <th>Alamat</th>
-                <th>kelas</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-              <tbody class="text-center">
-                <?php $no = 1   ?> 
-                <?php foreach ($siswa as $row ) : ?>
-                <tr>
-                  <td><?= $no ++ ?></td>
-                  <td><?= $row['nis'] ?></td>
-                  <td><?= $row['nama'] ?></td>
-                  <td><?= $row['alamat'] ?></td>
-                  <td><?= $row['kelas'] ?></td>
-                  <td>
-                    <a href="<?= base_url('siswa/edit/'.$row['siswa_id']) ?>" class="btn btn-sm btn-warning">
-                      <i class="fa fa-edit"></i>
-                    </a>
-                    <a href="<?= base_url('siswa/show?id=').$row['siswa_id'] ?>" class="btn btn-sm btn-info">
-                      <i class="fa fa-eye"></i>
-                    </a>
-                    <a href="<?= base_url('siswa/hapus_siswa?id=').$row['siswa_id'] ?>" class="btn btn-sm btn-danger">
-                      <i class="fa fa-trash"></i>
-                    </a>
-                  </td>
+                  <th>No</th>
+                  <th>Nis</th>
+                  <th>Nama</th>
+                  <th>Alamat</th>
+                  <th>kelas</th>
+                  <th>Action</th>
                 </tr>
-                <?php endforeach ;   ?> 
+              </thead>
+              <tbody class="text-center shadow">
+                <?php $no = 1   ?>
+                <?php foreach ($siswa as $row) : ?>
+                  <tr>
+                    <td><?= $no++ ?></td>
+                    <td><?= $row['nis'] ?></td>
+                    <td><?= $row['nama'] ?></td>
+                    <td><?= $row['alamat'] ?></td>
+                    <td><?= $row['kelas'] ?></td>
+                    <td>
+                      <a href="<?= base_url('siswa/edit/' . $row['siswa_id']) ?>" class="btn btn-sm btn-warning">
+                        <i class="fa fa-edit"></i>
+                      </a>
+                      <a href="<?= base_url('siswa/show?id=') . $row['siswa_id'] ?>" class="btn btn-sm btn-info">
+                        <i class="fa fa-eye"></i>
+                      </a>
+                      <a href="<?= base_url('siswa/hapus_siswa?id=') . $row['siswa_id'] ?>" class="btn btn-sm btn-danger">
+                        <i class="fa fa-trash"></i>
+                      </a>
+                    </td>
+                  </tr>
+                <?php endforeach;   ?>
               </tbody>
             </table>
           </div>

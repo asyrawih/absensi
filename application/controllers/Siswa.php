@@ -10,9 +10,16 @@ class Siswa extends CI_controller
         $this->load->model('Siswa_m', 'siswa');
     }
     public function index()
-    {
+    { 
+        $kelas = $this->input->get('kelas');
+        var_dump($kelas); 
+            
+        
         $data['title'] = 'Siswa';
-        $data['siswa'] = $this->siswa->get_siswa()->result_array();
+        $data['siswa'] = $this->siswa->get_siswa($kelas)->result_array();
+        // kelas untuk select box 
+        $data['kelas'] = $this->siswa->get_kelas();
+
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidenav');
         $this->load->view('templates/navbar', $data);
@@ -36,7 +43,6 @@ class Siswa extends CI_controller
             $data['sakit'] = $sakit ; 
             $data['izin'] = $izin ; 
 
-            
             $this->load->view('templates/header', $data);
             $this->load->view('templates/sidenav');
             $this->load->view('templates/navbar', $data);
@@ -109,6 +115,6 @@ class Siswa extends CI_controller
             'no_hp'     => $this->input->post('no_hp', true)
 
         ];
-        $data = $this->siswa->update_siswa($id,$siswa);
+         $this->siswa->update_siswa($id,$siswa);
     }
 }

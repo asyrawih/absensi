@@ -9,10 +9,17 @@ class Siswa_m extends CI_Model
 {
 
     // Select Data Siswa 
-    public function get_siswa()
+    public function get_siswa($kelas = null )
     {
-        $data  = $this->db->get('t_siswa');
-        return $data;
+        if(!empty($kelas)){
+            // ini Raw query 
+            $sql = "SELECT * from t_siswa where kelas = '$kelas'"; 
+            $q = $this->db->query($sql);
+            return $q; 
+        }else { 
+            $data  = $this->db->get('t_siswa');
+            return $data;
+        }
     }
     // Ambil Data Siswa berdasarkan id 
     // Terima $id dari controller Siswa
@@ -57,9 +64,6 @@ class Siswa_m extends CI_Model
             show_404();
         }
     }
-
-
-
     //Hapus Data Siswa 
     // var $id di dapat dari Controller Siswa 
     // dengan menerima Parameter id mengunakan 
@@ -75,9 +79,14 @@ class Siswa_m extends CI_Model
     // Hitung Jumalah Siswa keselurahan Dalam Tabel 
     public function hitung_siswa()
     {
-
         $data = $this->db->count_all('t_siswa');
         return  $data;
+    }
+    //Amibl kelas 
+    public function get_kelas() {
+        $data =  $this->db->get('t_kelas')->result_array();
+        return $data ; 
+        
     }
 }
 
