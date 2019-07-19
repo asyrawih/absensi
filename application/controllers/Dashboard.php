@@ -17,6 +17,7 @@ class Dashboard extends CI_controller {
 
      }
    public function index(){
+
     
         $data['title'] = 'Aplikasi Absensi';
           // hitung siswa 

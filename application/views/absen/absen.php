@@ -12,11 +12,11 @@
                                 <b>Tahun Ajaran : <small></small></b>
                             </div>
                             <div class="card-title">
-                                <b>Kelas : <?php  
-                                    if(!empty($kelas)){
-                                        echo $kelas[0]['kelas'] ; 
-                                    }
-                                ?>  </b>
+                                <b>Kelas : <?php
+                                            if (!empty($kelas)) {
+                                                echo $kelas[0]['kelas'];
+                                            }
+                                            ?> </b>
                             </div>
                         </div>
                         <div class="col-lg-5">
@@ -26,13 +26,19 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <form action="<?= base_url('absensi/proses_ab') ?>" method="POST">
+
+                <div class="table-responsive">
+                    <form action="<?= base_url('absensi/proses_ab') ?>" method="POST">
+                        <div class="card-body">
+                            <select name="mapel" id="mapel" class="form-control col-md-5">
+                                <?php foreach ($mapel as $row) : ?>
+                                    <option value="<?= $row['mapel_id'] ?>"><?= $row['nama_mapel'] ?></option>
+                                <?php endforeach; ?>
+                            </select>
                             <table class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                     
+
                                         <th>NIS</th>
                                         <th>Nama</th>
                                         <th class="text-center">KET</th>
@@ -40,10 +46,10 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $no = 1 ;
+                                    $no = 1;
                                     foreach ($kelas as $row) :  ?>
                                         <tr>
-                                           
+
                                             <td>
                                                 <!-- Ambil Data nis Dari model siswa  -->
                                                 <?= $row['nis'] ?>
@@ -66,10 +72,10 @@
                                 </tbody>
                                 <button type="submit" class="btn btn-success">Kirim</button>
                             </table>
-                        </form>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>

@@ -14,7 +14,7 @@
           <form action="">
             <select name="kelas" id="kelas" class="form-control col-md-3 mt-4">
               <?php foreach ($kelas as $row) : ?>
-                <option value="<?= $row['tingkat'] ?>"><?= $row['tingkat'] ?></option>
+                <option value="<?= $row['tingkat'] ?>">Kelas : <?= $row['tingkat'] ?></option>
               <?php endforeach;  ?>
             </select>
             <button type="submit" class="btn btn-info">Cari</button>
