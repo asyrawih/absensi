@@ -42,6 +42,7 @@ class Absen_m extends CI_Model
             $this->session->set_userdata('pesan' , 'gagal!');
             redirect('absensi', 'refresh');
         } else {
+            $this->session->set_userdata('berhasil' , 'Absen Berhasil!');
             $this->db->insert_batch('t_absensi', $data);
             redirect('absensi', 'refresh');
         }

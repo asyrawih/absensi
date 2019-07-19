@@ -42,10 +42,10 @@
   $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
   $('.main-panel').perfectScrollbar('update');
 
-  <?php 
-  
-    if($this->session->has_userdata('pesan')){
-     echo  "$.notify({
+  <?php
+
+  if ($this->session->has_userdata('pesan')) {
+    echo  "$.notify({
         title : 'GAGAL ! ' , 
         message : 'Anda Sudah Absen hari ini'
       } , 
@@ -54,13 +54,23 @@
       }
       )";
 
-      
-      $this->session->unset_userdata('pesan');
-      
-    }
 
-  ?> 
+    $this->session->unset_userdata('pesan');
+  } elseif ($this->session->has_userdata('berhasil')) {
 
+    echo  "$.notify({
+        title : 'Berhasil ! ' , 
+        message : 'Data Absen Berhasil Di Tambahkan'
+      } , 
+      {
+        type : 'success'
+      }
+      )";
+      
+    $this->session->unset_userdata('berhasil');
+  }
+
+  ?>
 </script>
 
 </body>
