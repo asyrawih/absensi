@@ -26,7 +26,6 @@ class Absensi extends CI_Controller
         //Ambil jumlah kelas 
         $data['kelas'] = $this->absen->get_kelas();
         $data['mapel'] = $this->mapel->get_mapel(); 
-        $data['alert'] = $this->session->has_userdata('pesan');
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidenav', $data);
         $this->load->view('templates/navbar', $data);
