@@ -51,8 +51,10 @@ class Absensi extends CI_Controller
 
     public function edit()
     {
+        $kelas = $this->input->get('kelas', true);
         $data['title']  = "Edit Data Absensi " ; 
-        
+        $data['kelas'] = $this->absen->get_siswa_ByKelas($kelas);
+        $data['mapel'] = $this->mapel->get_mapel();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidenav', $data);
         $this->load->view('templates/navbar', $data);

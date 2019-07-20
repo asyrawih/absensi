@@ -33,6 +33,8 @@
 <script src="<?= base_url() ?>assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
 <!-- Chart JS -->
 <script src="<?= base_url() ?>assets/js/plugins/chartjs.min.js"></script>
+<!-- datapicker -->
+<script src="<?= base_url() ?>assets/js/plugins/bootstrap-datepicker.min.js"></script>
 <!--  Notificaions Plugin    -->
 <!-- Control Cnter for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="<?= base_url() ?>assets/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
@@ -71,6 +73,14 @@
   }
 
   ?>
+
+  $('.datepicker').datepicker(
+    {
+      format : 'yyyy-mm-dd'
+    }
+  ) ; 
+
+
 </script>
 
 </body>

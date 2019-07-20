@@ -13,4 +13,7 @@
   <!-- CSS Files -->
   <link href="<?=base_url()?>assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="<?=base_url()?>assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet">
+  <link href="<?=base_url()?>assets/css/bootstrap-datepicker3.css" rel="stylesheet">
+
+ 
  

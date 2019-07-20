@@ -84,6 +84,9 @@ class Absen_m extends CI_Model
             // kembalikan nilai nya sebaris saja boss q     
             return $q->row_array();
         }
+
+
+        
     }
 }
 
