@@ -33,6 +33,7 @@ class Absensi extends CI_Controller
     }
 
 
+
     public function absen_kelas()
     {
 
@@ -53,8 +54,10 @@ class Absensi extends CI_Controller
     {
         $kelas = $this->input->get('kelas', true);
         $data['title']  = "Edit Data Absensi " ; 
-        $data['kelas'] = $this->absen->get_siswa_ByKelas($kelas);
+        $data['kelas'] = $this->absen->get_kelas();
         $data['mapel'] = $this->mapel->get_mapel();
+        //get kelas dan tanggal 
+        $data['data'] = $this->absen->get_kelas_tanggal(); 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidenav', $data);
         $this->load->view('templates/navbar', $data);

@@ -8,6 +8,61 @@ class Absen_m extends CI_Model
 {
 
     /*
+
+        Ambil Data berdasarkan filter tanggal dan kelas 
+
+    */
+
+    function get_kelas_tanggal()
+    {
+
+        $kelas = $this->input->get('kelas');
+        $tanggal = $this->input->get('tanggal');
+        $mapel = $this->input->get('mapel');
+        
+        // query cari data degnan relasi ; 
+        // cek tanggal dan kelas jika kosong 
+        
+        if(empty($kelas) and empty($tanggal)){
+            $sql = "SELECT DISTINCT
+
+                    nama , 
+                    nis , 
+                    tanggal , 
+                    ket , 
+                    nama_mapel 
+                 FROM t_siswa , t_absensi , t_mapel " ; 
+
+              return   $this->db->query($sql)->result_array();
+        }else { 
+            
+            $sql = "SELECT 
+
+                    nama , 
+                    ket , 
+                    tanggal , 
+                    nama_mapel , 
+                    kelas , 
+                    nis
+                    
+                    from t_absensi 
+                        LEFT JOIN t_siswa on t_absensi.siswa_id = t_siswa.siswa_id 
+                        LEFT JOIN t_mapel on t_absensi.mapel_id = t_mapel.mapel_id
+                        WHERE kelas = '$kelas' AND tanggal = '$tanggal' and nama_mapel = '$mapel'
+                        order by 
+                            nama" ; 
+
+               return  $this->db->query($sql)->result_array();
+
+        }
+        
+
+    }
+
+
+
+
+    /*
         Prosedure Kelas 
         Ambil Data data Siswa berdasar Kelas 
 
@@ -41,11 +96,11 @@ class Absen_m extends CI_Model
         $query = $this->db->get_where('t_absensi', ['tanggal' => $tanggal, 'mapel_id' => $mapel_id, 'siswa_id' => $siswa_id[0]])->num_rows();
         // jika row nya lebih dari nol artinya lebih dari satu baris 
 
-        if ($query > 0) {    
-            $this->session->set_userdata('pesan' , 'gagal!');
+        if ($query > 0) {
+            $this->session->set_userdata('pesan', 'gagal!');
             redirect('absensi', 'refresh');
         } else {
-            $this->session->set_userdata('berhasil' , 'Absen Berhasil!');
+            $this->session->set_userdata('berhasil', 'Absen Berhasil!');
             $this->db->insert_batch('t_absensi', $data);
             redirect('absensi', 'refresh');
         }
@@ -84,9 +139,6 @@ class Absen_m extends CI_Model
             // kembalikan nilai nya sebaris saja boss q     
             return $q->row_array();
         }
-
-
-        
     }
 }
 

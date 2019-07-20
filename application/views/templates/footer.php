@@ -73,13 +73,14 @@
   }
 
   ?>
+     
 
   $('.datepicker').datepicker(
     {
-      format : 'yyyy-mm-dd'
+      format : 'yyyy-mm-dd', 
+      todayHighlight : true
     }
   ) ; 
-
 
 </script>
 
