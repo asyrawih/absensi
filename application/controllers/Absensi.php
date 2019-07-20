@@ -14,40 +14,51 @@ class Absensi extends CI_Controller
         parent::__construct();
         $this->load->model('Absen_m', 'absen');
         $this->load->model('Siswa_m', 'siswa');
-        $this->load->model('Mapel_m' ,'mapel');
-        
+        $this->load->model('Mapel_m', 'mapel');
     }
 
     //
     public function index()
     {
         $data['title'] = "Absensi";
-       
+
         //Ambil jumlah kelas 
         $data['kelas'] = $this->absen->get_kelas();
-        $data['mapel'] = $this->mapel->get_mapel(); 
+        $data['mapel'] = $this->mapel->get_mapel();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidenav', $data);
         $this->load->view('templates/navbar', $data);
         $this->load->view('absen/index');
-        $this->load->view('templates/footer' , $data);
+        $this->load->view('templates/footer', $data);
     }
 
 
     public function absen_kelas()
     {
-        
+
         $kelas = $this->input->get('kelas', true);
         $data['title'] = "Absensi";
         $data['kelas'] = $this->absen->get_siswa_ByKelas($kelas);
-        $data['mapel'] = $this->mapel->get_mapel(); 
+        $data['mapel'] = $this->mapel->get_mapel();
         //Ambil jumlah kelas 
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidenav', $data);
         $this->load->view('templates/navbar', $data);
-        $this->load->view('absen/absen',$data);
+        $this->load->view('absen/absen', $data);
         $this->load->view('templates/footer');
     }
+
+
+    public function edit()
+    {
+        $data['title']  = "Edit Data Absensi " ; 
+        
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidenav', $data);
+        $this->load->view('templates/navbar', $data);
+        $this->load->view('absen/edit');
+        $this->load->view('templates/footer', $data);
+     }
 
     // Proses Data Absen 
     public function proses_ab()
@@ -58,22 +69,22 @@ class Absensi extends CI_Controller
         $ket = $this->input->post('ket');
         $tanggal = date('Y-m-d');
         $mapel = $this->input->post('mapel');
-        
+
         // tangkap nilai siswa_id untuk di looping nanti nya 
-        $index = 0 ;
+        $index = 0;
         foreach ($siswa as $siswa_id) {
             array_push($data, array(
                 'siswa_id'  => $siswa[$index],
                 'ket'     => $ket[$index],
-                'tanggal'   => $tanggal, 
+                'tanggal'   => $tanggal,
                 'mapel_id'  => $mapel
 
             ));
             $index++;
         }
 
-   
-        $this->absen->save_ab($data);   
+
+        $this->absen->save_ab($data);
     }
 }
 

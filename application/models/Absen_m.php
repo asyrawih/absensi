@@ -36,8 +36,11 @@ class Absen_m extends CI_Model
         $mapel_id = $this->input->post('mapel');
         $tanggal = date('Y-m-d');
         $siswa_id = $this->input->post('siswa_id');
+        //cek row yang data nya sama dengan inputan post 
+
         $query = $this->db->get_where('t_absensi', ['tanggal' => $tanggal, 'mapel_id' => $mapel_id, 'siswa_id' => $siswa_id[0]])->num_rows();
-        
+        // jika row nya lebih dari nol artinya lebih dari satu baris 
+
         if ($query > 0) {    
             $this->session->set_userdata('pesan' , 'gagal!');
             redirect('absensi', 'refresh');

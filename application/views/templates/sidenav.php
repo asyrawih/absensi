@@ -5,12 +5,12 @@
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
       <div class="logo">
-        <a class="simple-text logo-mini" href="http://www.creative-tim.com">
+        <a class="simple-text logo-mini" href="#">
           <div class="logo-image-small">
             <img src="<?=base_url()?>assets/img/logo-small.png">
           </div>
         </a>
-        <a class="simple-text logo-normal" href="http://www.creative-tim.com">
+        <a class="simple-text logo-normal" href="#">
           <?= $title?>
           <!-- <div class="logo-image-big">
             <img src="../assets/img/logo-big.png">
@@ -29,6 +29,12 @@
             <a href="<?=base_url('absensi')?>">
               <i class="nc-icon nc-alert-circle-i"></i>
               <p>Absen</p>
+            </a>
+          </li>
+          <li>
+            <a href="<?=base_url('absensi/edit')?>">
+              <i class="nc-icon nc-atom"></i>
+              <p>Edit Absensi</p>
             </a>
           </li>
           <li>
