@@ -11,16 +11,12 @@
             <i class="fa fa-pencil mx-2 text-warning"> </i>
             Tambah Data
           </a>
-          <form action="">
-            <select name="kelas" id="kelas" class="form-control col-md-3 mt-4">
-              <?php foreach ($kelas as $row) : ?>
-                <option value="<?= $row['tingkat'] ?>">Kelas : <?= $row['tingkat'] ?></option>
-              <?php endforeach;  ?>
-            </select>
-            <button type="submit" class="btn btn-info">Cari</button>
-          </form>
-        </div>
         <div class="card-body">
+          <div class="col-lg-4 col-md-4 col-sm-3">
+            <div class="input-group">
+              <input type="text" id="keyword" class="form-control is-valid" placeholder="cari data ... " autocomplete="off">
+            </div>
+          </div>
           <div class="table-responsive table-full-width">
             <table class="table table-bordered">
               <thead class=" text-white text-center bg-success ">
@@ -33,7 +29,7 @@
                   <th>Action</th>
                 </tr>
               </thead>
-              <tbody class="text-center shadow">
+              <tbody class="text-center shadow" id="table-siswa">
                 <?php $no = 1   ?>
                 <?php foreach ($siswa as $row) : ?>
                   <tr>

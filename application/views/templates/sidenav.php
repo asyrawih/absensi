@@ -34,7 +34,7 @@
           <li>
             <a href="<?=base_url('absensi/edit')?>">
               <i class="nc-icon nc-atom"></i>
-              <p>Edit Absensi</p>
+              <p>List Absensi</p>
             </a>
           </li>
           <li>

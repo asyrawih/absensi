@@ -10,20 +10,20 @@
                         <div class="row">
                             <small class="ml-3" style="font-weight: bold">Silakan pilih filter :</small>
                             <div class="input-group">
-                            <div class="col-lg-4 mt-2">
+                                <div class="col-lg-4 mt-2">
                                     <select name="mapel" id="kelas" class="form-control">
                                         <option value="">--mapel--</option>
-                                        <?php  foreach($mapel as $row ) : ?> 
-                                        <option value="<?=$row['nama_mapel']?>"><?=$row['nama_mapel']?></option>
-                                        <?php  endforeach ;  ?>
+                                        <?php foreach ($mapel as $row) : ?>
+                                            <option value="<?= $row['nama_mapel'] ?>"><?= $row['nama_mapel'] ?></option>
+                                        <?php endforeach;  ?>
                                     </select>
                                 </div>
                                 <div class="col-lg-4 mt-2">
                                     <select name="kelas" id="kelas" class="form-control">
                                         <option value="">--kelas--</option>
-                                        <?php  foreach($kelas as $row ) : ?> 
-                                        <option value="<?=$row['tingkat']?>"><?=$row['tingkat']?></option>
-                                        <?php  endforeach ;  ?>
+                                        <?php foreach ($kelas as $row) : ?>
+                                            <option value="<?= $row['tingkat'] ?>"><?= $row['tingkat'] ?></option>
+                                        <?php endforeach;  ?>
                                     </select>
                                 </div>
                                 <div class="col-lg-4 mt-2">
@@ -43,16 +43,12 @@
         <!-- Start Card Note :  -->
         <div class="col-lg-6">
             <div class="card shadow">
-                <div class="card card-category bg-info text-white">
-                    <h4 class="ml-4" style="font-weight: bold">KETERANGAN</h4>
-                </div>
-                <form action="">
-                    <div class="card-body">
-                        <div class="row">
-
-                        </div>
+                <div class="info info-horizontal">
+                    <div class="description ml-3">
+                        <h4 class="info-title">Keterangan</h4>
+                        <p style="font-weight: bold">Silak pilih Tanggal , Kelas Dan Mata pelajaran Untuk melihat absensi Terakhir</p>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
 
@@ -61,7 +57,7 @@
             <div class="card shadow">
                 <div class="card-title">
                     <div class="card card-status bg-primary text-white">
-                        <h3 class="ml-3 mt-2 display-5" style="font-weight: bold ; margin-top: 2px">EDIT DATA ABSENSI</h3>
+                        <h3 class="ml-3 mt-2 display-5" style="font-weight: bold ; margin-top: 2px"> DATA ABSENSI</h3>
                     </div>
                 </div>
                 <div class="table-responsive">
@@ -76,20 +72,21 @@
                             <th>Action</th>
                         </thead>
                         <tbody class="text-center">
-                            <?php $no = 1 ;  foreach($data as $row ) : ?> 
-                            <tr>
-                                <td><?=$no++?></td>
-                                <td><?= $row['nis'] ?></td>
-                                <td><?= $row['nama'] ?></td>
-                                <td><?= $row['ket'] ?></td>
-                                <td><?= $row['tanggal'] ?></td>
-                                <td><?= $row['nama_mapel'] ?></td>
-                                <td class="text-center">
-                                    <a href="" class="btn btn-info btn-sm">Edit</a>
-                                </td>
-                            </tr>
-                            <?php endforeach ; ?> 
-                           
+                            <?php $no = 1;
+                            foreach ($data as $row) : ?>
+                                <tr>
+                                    <td><?= $no++ ?></td>
+                                    <td><?= $row['nis'] ?></td>
+                                    <td><?= $row['nama'] ?></td>
+                                    <td><?= $row['ket'] ?></td>
+                                    <td><?= $row['tanggal'] ?></td>
+                                    <td><?= $row['nama_mapel'] ?></td>
+                                    <td class="text-center">
+                                        <a href="" class="btn btn-info btn-sm">Edit</a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+
                         </tbody>
                     </table>
                 </div>

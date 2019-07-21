@@ -16,7 +16,7 @@
 					<h5 class="title"><?= $siswa[0]['nama'] ?></h5>
 					<h3><?= $siswa[0]['jk'] == 'P' ? 'Perempuan' : 'Laki-Laki' ?></h3>
 				</div>
-				<div class="col-lg-12 col-md-4 col-sm-3 ml-2">
+				<div class="col-lg-12 col-md-12 col-sm-12 ml-2">
 					<table class="table table-bordered">
 						<thead class="text-center bg-success shadow text-white">
 							<th>Hadir</th>

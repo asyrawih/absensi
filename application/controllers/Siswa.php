@@ -10,11 +10,9 @@ class Siswa extends CI_controller
         $this->load->model('Siswa_m', 'siswa');
     }
     public function index()
-    { 
+    {
         $kelas = $this->input->get('kelas');
-        var_dump($kelas); 
-            
-        
+
         $data['title'] = 'Siswa';
         $data['siswa'] = $this->siswa->get_siswa($kelas)->result_array();
         // kelas untuk select box 
@@ -31,17 +29,17 @@ class Siswa extends CI_controller
     {
         $data['title'] = 'Siswa';
         $id = $this->input->get('id');
-        $this->load->model('Absen_m' , 'absen');
-        $kehadiran = $this->absen->hitung_kehadiran_siswa($id , 'hadir');
-        $sakit = $this->absen->hitung_kehadiran_siswa($id , 'sakit');
-        $izin = $this->absen->hitung_kehadiran_siswa($id , 'izin');
+        $this->load->model('Absen_m', 'absen');
+        $kehadiran = $this->absen->hitung_kehadiran_siswa($id, 'hadir');
+        $sakit = $this->absen->hitung_kehadiran_siswa($id, 'sakit');
+        $izin = $this->absen->hitung_kehadiran_siswa($id, 'izin');
         // cegat apa bila id nya tdk di isi ato langsung akses ke link 
         if ($id !== null) {
             //Ambil Semua data absensi taruh dalam satu varible 
             $data['siswa'] = $this->siswa->get_siswa_byId($id)->result_array();
-            $data['kehadiran'] = $kehadiran ; 
-            $data['sakit'] = $sakit ; 
-            $data['izin'] = $izin ; 
+            $data['kehadiran'] = $kehadiran;
+            $data['sakit'] = $sakit;
+            $data['izin'] = $izin;
 
             $this->load->view('templates/header', $data);
             $this->load->view('templates/sidenav');
@@ -105,7 +103,7 @@ class Siswa extends CI_controller
     //Proses update Siswa
     public function update()
     {
-        $id = $this->uri->segment(3) ; 
+        $id = $this->uri->segment(3);
         $siswa = [
             'nama'      => $this->input->post('nama', true),
             'alamat'    => $this->input->post('alamat', true),
@@ -115,6 +113,15 @@ class Siswa extends CI_controller
             'no_hp'     => $this->input->post('no_hp', true)
 
         ];
-         $this->siswa->update_siswa($id,$siswa);
+        $this->siswa->update_siswa($id, $siswa);
+    }
+
+
+    public function cariSiswa()
+    {
+
+        $keyword = $this->input->get('keyword');
+        
+        $this->siswa->cari($keyword);
     }
 }

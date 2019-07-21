@@ -88,6 +88,45 @@ class Siswa_m extends CI_Model
         return $data ; 
         
     }
+
+    public function cari($keyword){ 
+
+        $this->db->select('*');
+        $this->db->like('nama',$keyword);
+        $this->db->or_like('nama',$keyword);
+        $this->db->or_like('nis',$keyword);
+        $this->db->or_like('kelas',$keyword);
+
+        
+        $data = $this->db->get('t_siswa')->result_array();
+        $no = 1 ;
+        $output ='';
+        foreach($data as $row) {
+            $output .= '
+            <tr>
+            <td> '.$no++.'</td>
+            <td> '.$row['nis'].'</td>
+            <td> ' .$row['nama'] .'</td>
+            <td> '.$row['alamat'].' </td>
+            <td> '.$row['kelas'].' </td>
+            <td>
+              <a href="' . base_url('siswa/edit/' . $row['siswa_id']).' " class="btn btn-sm btn-warning">
+                <i class="fa fa-edit"></i>
+              </a>
+              <a href=" '.base_url('siswa/show?id=') . $row['siswa_id']. '" class="btn btn-sm btn-info">
+                <i class="fa fa-eye"></i>
+              </a>
+              <a href=" '. base_url('siswa/hapus_siswa?id=') . $row['siswa_id'].'" class="btn btn-sm btn-danger">
+                <i class="fa fa-trash"></i>
+              </a>
+            </td>
+          </tr>
+            
+            ' ;
+        }
+         echo $output ; 
+
+    }
 }
 
 /* End of file Siswa_m.php */
