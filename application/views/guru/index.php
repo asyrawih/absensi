@@ -15,6 +15,9 @@
                   Tambah Data
                 </a>
               </div>
+                <div class="col-md-3">
+                  <input type="text" id="keyword" class="form-control">
+                </div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
@@ -27,10 +30,10 @@
                         <th>Action</th>
                       </tr>
                     </thead>
-                    <tbody class="text-center">
-                      <?php foreach ($guru as $row ) : ?>
+                    <tbody class="text-center" id="table_guru">
+                      <?php $no = 1 ; foreach ($guru as $row ) : ?>
                         <tr>
-                          <td>1</td>
+                          <td><?= $no++ ?></td>
                           <td><?= $row['nama_guru'] ?></td>
                           <td><?= $row['kd_guru'] ?></td>
                           <td><?= $row['alamat'] ?></td>

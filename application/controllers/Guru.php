@@ -84,7 +84,7 @@ class Guru extends CI_Controller
     public function update()
     {
         $id = $this->uri->segment(3);
-        
+
         // Sedikan Data Dalam Bentuk Array Assoc 
         $guru = [
             'nama_guru' => $this->input->post('nama_guru', true),
@@ -92,8 +92,17 @@ class Guru extends CI_Controller
             'no_hp'     => $this->input->post('nohp', true),
             'alamat'    => $this->input->post('alamat', true)
         ];
-             $this->guru->update_guru($id , $guru);
-        }       
+        $this->guru->update_guru($id, $guru);
+    }
+
+
+
+    public function cariGuru(){ 
+
+        $keyword = $this->input->get('keyword'); 
+        $this->guru->cari_guru($keyword);
+        
+    }
 }
 
 /* End of file Guru.php */

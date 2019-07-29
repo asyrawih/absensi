@@ -19,11 +19,11 @@ class Absen_m extends CI_Model
         $kelas = $this->input->get('kelas');
         $tanggal = $this->input->get('tanggal');
         $mapel = $this->input->get('mapel');
-        
+
         // query cari data degnan relasi ; 
         // cek tanggal dan kelas jika kosong 
-        
-        if(empty($kelas) and empty($tanggal)){
+
+        if (empty($kelas) and empty($tanggal)) {
             $sql = "SELECT DISTINCT
 
                     nama , 
@@ -31,11 +31,11 @@ class Absen_m extends CI_Model
                     tanggal , 
                     ket , 
                     nama_mapel 
-                 FROM t_siswa , t_absensi , t_mapel " ; 
+                 FROM t_siswa , t_absensi , t_mapel ";
 
-              return   $this->db->query($sql)->result_array();
-        }else { 
-            
+            return   $this->db->query($sql)->result_array();
+        } else {
+
             $sql = "SELECT 
 
                     nama , 
@@ -50,16 +50,11 @@ class Absen_m extends CI_Model
                         LEFT JOIN t_mapel on t_absensi.mapel_id = t_mapel.mapel_id
                         WHERE kelas = '$kelas' AND tanggal = '$tanggal' and nama_mapel = '$mapel'
                         order by 
-                            nama" ; 
+                            nama";
 
-               return  $this->db->query($sql)->result_array();
-
+            return  $this->db->query($sql)->result_array();
         }
-        
-
     }
-
-
 
 
     /*

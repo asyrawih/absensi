@@ -121,7 +121,6 @@ class Siswa extends CI_controller
     {
 
         $keyword = $this->input->get('keyword');
-        
         $this->siswa->cari($keyword);
     }
 }
