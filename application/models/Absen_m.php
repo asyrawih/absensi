@@ -24,14 +24,17 @@ class Absen_m extends CI_Model
         // cek tanggal dan kelas jika kosong 
 
         if (empty($kelas) and empty($tanggal)) {
-            $sql = "SELECT DISTINCT
-
-                    nama , 
-                    nis , 
-                    tanggal , 
-                    ket , 
-                    nama_mapel 
-                 FROM t_siswa , t_absensi , t_mapel ";
+            $sql = "SELECT
+                        nama,
+                        ket,
+                        tanggal,
+                        nama_mapel,
+                        kelas,
+                        nis 
+                    FROM
+                      t_absensi
+                    LEFT JOIN t_siswa ON t_absensi.siswa_id = t_siswa.siswa_id
+                    LEFT JOIN t_mapel ON t_absensi.mapel_id = t_mapel.mapel_id";
 
             return   $this->db->query($sql)->result_array();
         } else {

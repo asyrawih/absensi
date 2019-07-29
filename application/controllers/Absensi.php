@@ -6,9 +6,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Absensi extends CI_Controller
 {
-
-
-
     public function __construct()
     {
         parent::__construct();
@@ -31,9 +28,6 @@ class Absensi extends CI_Controller
         $this->load->view('absen/index');
         $this->load->view('templates/footer', $data);
     }
-
-
-
     public function absen_kelas()
     {
 
@@ -48,33 +42,30 @@ class Absensi extends CI_Controller
         $this->load->view('absen/absen', $data);
         $this->load->view('templates/footer');
     }
-
-
     public function edit()
     {
         $kelas = $this->input->get('kelas', true);
-        $data['title']  = "Edit Data Absensi " ; 
+        $data['title']  = "Edit Data Absensi ";
         $data['kelas'] = $this->absen->get_kelas();
         $data['mapel'] = $this->mapel->get_mapel();
         //get kelas dan tanggal 
-        $data['data'] = $this->absen->get_kelas_tanggal(); 
+        $data['data'] = $this->absen->get_kelas_tanggal();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidenav', $data);
         $this->load->view('templates/navbar', $data);
         $this->load->view('absen/edit');
         $this->load->view('templates/footer', $data);
-     }
+    }
 
     // Proses Data Absen 
     public function proses_ab()
     {
-
         $data     = []; // Sediakan Array Kosong untuk data yang akan di push 
         $siswa = $this->input->post('siswa_id');
         $ket = $this->input->post('ket');
         $tanggal = date('Y-m-d');
         $mapel = $this->input->post('mapel');
-
+        
         // tangkap nilai siswa_id untuk di looping nanti nya 
         $index = 0;
         foreach ($siswa as $siswa_id) {
@@ -87,8 +78,6 @@ class Absensi extends CI_Controller
             ));
             $index++;
         }
-
-
         $this->absen->save_ab($data);
     }
 }

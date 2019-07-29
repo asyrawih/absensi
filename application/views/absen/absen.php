@@ -30,7 +30,8 @@
                 <div class="table-responsive">
                     <form action="<?= base_url('absensi/proses_ab') ?>" method="POST">
                         <div class="card-body">
-                            <select name="mapel" id="mapel" class="form-control col-md-5">
+                            <select name="mapel" id="mapel" class="form-control col-md-5" required>
+                                <option value="">--Mapel--</option>
                                 <?php foreach ($mapel as $row) : ?>
                                     <option value="<?= $row['mapel_id'] ?>"><?= $row['nama_mapel'] ?></option>
                                 <?php endforeach; ?>

@@ -36,7 +36,6 @@
                         </div>
                     </div>
                 </form>
-
             </div>
         </div>
         <!-- End Card Filter  -->
@@ -51,7 +50,6 @@
                 </div>
             </div>
         </div>
-
         <!-- end Card note  -->
         <div class="col-lg-12">
             <div class="card shadow">
@@ -61,7 +59,7 @@
                     </div>
                 </div>
                 <div class="table-responsive">
-                    <table class="table">
+                    <table class="table" id="table-edit">
                         <thead class="text-center">
                             <th>No</th>
                             <th>NIS</th>
@@ -86,7 +84,6 @@
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
-
                         </tbody>
                     </table>
                 </div>
