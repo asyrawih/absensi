@@ -38,7 +38,7 @@
 <!--  Notificaions Plugin    -->
 <!-- Control Cnter for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="<?= base_url() ?>assets/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
-<script src="<?= base_url()?>/assets/js/ajax/app.js"></script>
+<script src="<?= base_url() ?>/assets/js/ajax/app.js"></script>
 <script>
   // Agar Bisa Di scrolll jancokkkk 
 
@@ -49,7 +49,7 @@
 
   if ($this->session->has_userdata('pesan')) {
     echo  "$.notify({
-        title : 'GAGAL ! ' , 
+        title : 'Gagal ! ' , 
         message : 'Anda Sudah Absen hari ini'
       } , 
       {
@@ -69,20 +69,21 @@
         type : 'success'
       }
       )";
-      
+
     $this->session->unset_userdata('berhasil');
   }
 
   ?>
-     
+ 
+</script>
 
-  $('.datepicker').datepicker(
-    {
-      format : 'yyyy-mm-dd', 
-      todayHighlight : true
-    }
-  ) ; 
-
+<script>
+  $('.datepicker').datepicker({
+		format: 'yyyy/mm/dd',
+		startDate: '-3d',
+		todayHighlight: true
+	
+	  });
 </script>
 
 </body>

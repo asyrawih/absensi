@@ -5,14 +5,13 @@ $(document).ready(function() {
 		$("#table-siswa").load(
 			"http://absensi.test/siswa/cariSiswa?keyword=" + $("#keyword").val()
 		);
-   });
-   //cari Data guru 
-   $("#keyword").on("keyup", function() {
+	});
+	//cari Data guru
+	$("#keyword").on("keyup", function(keyword) {
 		$("#table_guru").load(
 			"http://absensi.test/guru/cariGuru?keyword=" + $("#keyword").val()
 		);
-   });
-   
+	});
 
-
+	
 });

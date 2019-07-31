@@ -1,6 +1,6 @@
 <?php
 
-
+header('Access-Control-Allow-Origin: *');
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
@@ -102,6 +102,13 @@ class Guru extends CI_Controller
         $keyword = $this->input->get('keyword'); 
         $this->guru->cari_guru($keyword);
         
+    }
+
+
+    public function getGuru(){ 
+
+        $this->guru->ambilGuru();
+
     }
 }
 

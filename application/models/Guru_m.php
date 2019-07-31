@@ -85,7 +85,6 @@ class Guru_m extends CI_Model
         $output = '';
 
         foreach ($data as $row) {
-
             $output .= '
             <tr>
             <td>'. $no++ .'</td>
@@ -104,11 +103,19 @@ class Guru_m extends CI_Model
               </a>
             </td>
           </tr>
-            
             ';
         }
 
         echo $output;
+    }
+
+    public function ambilGuru() { 
+
+        $guru =  $this->db->get('t_guru')->result_array();
+        
+        return $this->output->set_content_type('application/json')->set_output(json_encode($guru));
+        
+        
     }
 }
 
