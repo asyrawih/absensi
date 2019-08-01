@@ -80,6 +80,17 @@ class Absensi extends CI_Controller
         }
         $this->absen->save_ab($data);
     }
+
+    public function update(){
+        $id = $this->uri->segment(3);
+        $data['title'] = "Update Absensin ";
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidenav', $data);
+        $this->load->view('templates/navbar', $data);
+        $this->load->view('absen/update');
+        $this->load->view('templates/footer', $data);
+    }
+        
 }
 
 

@@ -25,6 +25,7 @@ class Absen_m extends CI_Model
 
         if (empty($kelas) and empty($tanggal)) {
             $sql = "SELECT
+                        absen_id, 
                         nama,
                         ket,
                         tanggal,
@@ -39,21 +40,26 @@ class Absen_m extends CI_Model
             return   $this->db->query($sql)->result_array();
         } else {
 
-            $sql = "SELECT 
-
-                    nama , 
-                    ket , 
-                    tanggal , 
-                    nama_mapel , 
-                    kelas , 
-                    nis
-                    
-                    from t_absensi 
-                        LEFT JOIN t_siswa on t_absensi.siswa_id = t_siswa.siswa_id 
-                        LEFT JOIN t_mapel on t_absensi.mapel_id = t_mapel.mapel_id
-                        WHERE kelas = '$kelas' AND tanggal = '$tanggal' and nama_mapel = '$mapel'
-                        order by 
-                            nama";
+            $sql = "
+            SELECT 
+                absen_id,
+                nama,
+                ket,
+                tanggal,
+                nama_mapel,
+                kelas,
+                nis , 
+                siswa_id
+            FROM
+                t_absensi
+                LEFT JOIN t_siswa ON t_absensi.siswa_id = t_siswa.siswa_id
+                LEFT JOIN t_mapel ON t_absensi.mapel_id = t_mapel.mapel_id 
+            WHERE
+                kelas = '$kelas' 
+                AND tanggal = '$tanggal' 
+                AND nama_mapel = '$mapel' 
+            ORDER BY
+                nama";
 
             return  $this->db->query($sql)->result_array();
         }

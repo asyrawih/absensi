@@ -80,7 +80,7 @@
                                     <td><?= $row['tanggal'] ?></td>
                                     <td><?= $row['nama_mapel'] ?></td>
                                     <td class="text-center">
-                                        <a href="" class="btn btn-info btn-sm">Edit</a>
+                                        <a href="<?= base_url('absensi/update/').$row['absen_id'] ?>" class="btn btn-info btn-sm">Edit</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
